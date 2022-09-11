@@ -18,7 +18,7 @@
          "matches": ["https://*.dndbeyond.com/campaigns/*"],
          "js": ["campaign_page.js"]
       },{
-        "matches": ["https://*.dndbeyond.com/profile/*"],
+        "matches": ["https://*.dndbeyond.com/profile/*", "https://*.dndbeyond.com/characters/*"],
         "all_frames": true,
         "js": ["character_page.js"]
     }
@@ -29,7 +29,7 @@
 "web_accessible_resources": [
     {
     "matches": ["https://*.dndbeyond.com/*"],
-    "resources": ["contentscript.js"]
+    "resources": ["campaign_page.js", "character_page.js"]
     }
 ],
 "options_ui":{
