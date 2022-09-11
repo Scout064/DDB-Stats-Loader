@@ -24,7 +24,7 @@ setTimeout(() => {
             console.log('opening url and grabbing data!');
             (function(){
                 var i = document.createElement('iframe');
-                i.style.display = 'flex';
+                i.style.display = 'none';
                 i.onload = function() { i.parentNode.removeChild(i); };
                 i.src = url_array;
                 document.body.appendChild(i);
