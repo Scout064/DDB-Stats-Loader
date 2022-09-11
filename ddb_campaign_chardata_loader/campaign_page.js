@@ -22,6 +22,8 @@ setTimeout(() => {
             console.log(url_array);
 // pass on url and digest as hidden iFrame
             console.log('opening url and grabbing data!');
+//FUNCTION SEEMS TO OPEN AND IMMEDITALY CLOSE THE iFrame ON ARRAY ITERATION ---- NEED FIXING!//
+//character_page.js AND background.js WORK IF CHARACTER SHEET IS OPENED MANUALLY//
             (function(){
                 var i = document.createElement('iframe');
                 i.style.display = 'none';
