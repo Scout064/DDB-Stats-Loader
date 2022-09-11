@@ -1,0 +1,38 @@
+{
+"name": "DDB Stats Loader",
+"description": "Loads Charachter Stats from DDB and forwards them to a Server for further digestion",
+"version": "0.1",
+"manifest_version": 3,
+"minimum_chrome_version": "93",
+"permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "webRequest"
+],
+"host_permissions": [
+    "https://*.dndbeyond.com/*"
+],
+"content_scripts": [
+      {
+         "matches": ["https://*.dndbeyond.com/campaigns/*"],
+         "js": ["campaign_page.js"]
+      },{
+        "matches": ["https://*.dndbeyond.com/profile/*"],
+        "all_frames": true,
+        "js": ["character_page.js"]
+    }
+   ],
+    "background": {
+        "service_worker": "background.js"
+    },
+"web_accessible_resources": [
+    {
+    "matches": ["https://*.dndbeyond.com/*"],
+    "resources": ["contentscript.js"]
+    }
+],
+"options_ui":{
+    "page": "options.html"
+    }
+}
