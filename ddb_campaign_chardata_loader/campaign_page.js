@@ -50,12 +50,5 @@ setTimeout(() => {
             } 
         }
     grabCharData();
-    function timeout() {
-        setTimeout(function () {
-            document.querySelectorAll('iframe').forEach(makeIframe => makeIframe.src = makeIframe.src);
-            timeout();
-        }, 60000);
-    }
-    timeout();
 }, 10000);
 

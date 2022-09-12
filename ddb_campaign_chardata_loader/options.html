@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
 <body>
-
 <h1>DDB Stats Loader - Options</h1>
-
-<p>Dumy Page</p>
-
+<br>
+    <p>Please enter the client IP.</p>
+    <p>The client being the receiving device running the digestion.py script</p>
+    <label id="current-ip" for="current-ip" class="formbuilder-text-label">current IP: <span id="ip" class="formbuilder-required">NaN</span></label>
+<br><br>
+<div class="rendered-form">
+    <div class="">
+        <h3 id="control-131468">Networking</h3></div>
+    <div class="formbuilder-text form-group field-ipaddress">
+        <label for="ipaddress" class="formbuilder-text-label">IP address<span class="formbuilder-required">*</span></label>
+        <input type="text" placeholder="IP address of client" class="form-control" name="ipaddress" maxlength="15" id="ipaddress" required="required" aria-required="true">
+    </div>
+    <div class="formbuilder-button form-group field-save">
+        <button type="button" class="btn-primary btn" name="save" style="primary" id="save">Save</button>
+    </div>
+</div>
+    <br>
+    <div id="status"></div>
+<script src="options.js"></script>
 </body>
 </html>

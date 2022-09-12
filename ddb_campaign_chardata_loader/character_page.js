@@ -17,7 +17,7 @@
             const current_hp = document.querySelector('div.ct-health-summary__hp-group.ct-health-summary__hp-group--primary > div:nth-child(1) > div.ct-health-summary__hp-item-content > div').innerText;
             const max_hp = document.querySelector('div.ct-health-summary__hp-group.ct-health-summary__hp-group--primary > div:nth-child(3) > div.ct-health-summary__hp-item-content > div').innerText;
             const name = document.querySelector('h1').innerText;
-// log values to console -> !change to send to array and then to Python Client!
+// log values to console and send to background.js
             const data_array = [];
             console.log('Done'),
             console.log('Name: ' + name),
@@ -29,3 +29,4 @@
             // push URL to backgrund script
             chrome.runtime.sendMessage({message: 'data_array', data: data_array})}
 init();
+setTimeout(function () {window.location.reload()}, 60000);
