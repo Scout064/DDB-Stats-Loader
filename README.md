@@ -3,7 +3,7 @@
 -> Add send to Networked Client Routine for Char Stats
 
 PYTHON:
-
+```
 from socket import *
 import json
 s = socket()
@@ -21,12 +21,12 @@ while 1:
 
     data = json.loads(data)
     print data
+```    
     
-    
-    
-    
+        
     JAVASCRIPT:
 
+```
 function callPython()
 {
 var xmlhttp;
