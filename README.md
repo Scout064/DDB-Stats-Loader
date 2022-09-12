@@ -1,4 +1,7 @@
 # DDB-Stats-Loader
+##To-DO
+
+-> Add Button to start collection instead of run at load.
 
 -> Add send to Networked Client Routine for Char Stats
 
