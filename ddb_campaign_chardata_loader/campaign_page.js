@@ -1,5 +1,5 @@
 /*eslint-env es6*/
-// Run on Tab load, wait 10 Seconds, then start grabbing urls off the Site with 60 seconds wait
+// Run on Tab load, wait 10 Seconds, then start grabbing urls and data off the Site
 setTimeout(() => { 
 // define css selector for active character urls
     var urls = document.querySelectorAll(
@@ -19,7 +19,7 @@ setTimeout(() => {
         return element !== undefined;
         });
     console.log('array cleaned!');
-    console.log('waiting 25 sconds');
+    console.log('loading characters!');
 // push URL to backgrund script
     chrome.runtime.sendMessage({message: 'url_array', data: url_array});
 // define function to iterate url_array and get character urls
@@ -31,8 +31,9 @@ setTimeout(() => {
             function createNodeContainer(){ // create the new div
                 var makeIframe = document.createElement("iframe");
                     makeIframe.setAttribute("src", url_array_iterate);
-                    makeIframe.setAttribute("overflow", "hidden");
                     makeIframe.setAttribute("scrolling", "no");
+                    makeIframe.setAttribute("id", "iframe");
+                    makeIframe.style.overflow = "hidden";
                     makeIframe.style.border = "0pt";
                     makeIframe.style.border = "none";
                     makeIframe.style.position = "absolute";
@@ -41,12 +42,20 @@ setTimeout(() => {
                     makediv.style.height = "0px";
                     makediv.style.width = "0px";
                     makediv.style.position = "relative";
-                    makediv.setAttribute("overflow", "hidden");
+                    makediv.style.overflow = "hidden";
                 makediv.appendChild(makeIframe);
                 document.body.appendChild(makediv);
-                    }
+                }
                 createNodeContainer();
-            }
+            } 
         }
-    setInterval(grabCharData, 25000);
-    }, 10000);
+    grabCharData();
+    function timeout() {
+        setTimeout(function () {
+            document.querySelectorAll('iframe').forEach(makeIframe => makeIframe.src = makeIframe.src);
+            timeout();
+        }, 60000);
+    }
+    timeout();
+}, 10000);
+
