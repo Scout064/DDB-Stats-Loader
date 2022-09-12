@@ -24,7 +24,7 @@ while 1:
 ```    
     
         
-    JAVASCRIPT:
+JavaScript:
 
 ```
 function callPython()
