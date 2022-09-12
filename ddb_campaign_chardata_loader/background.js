@@ -28,5 +28,5 @@ chrome.runtime.onMessage.addListener(
     else {
         console.log('NO CHARACTER DATA RECEIVED!');}
         }
-    setInterval(requestCharData, 30000);
+    setInterval(requestCharData, 10000);
     });
