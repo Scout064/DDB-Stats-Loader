@@ -1,16 +1,10 @@
 ## Import libraries
-#import machine
-#import _thread as thread
 import app
 import os
 import json
 import flask
 from flask_cors import CORS
-#from time import sleep
-#import network
-#import re
 import logging
-#import asyncio
 import sys
 
 ## define flask/picoweb
