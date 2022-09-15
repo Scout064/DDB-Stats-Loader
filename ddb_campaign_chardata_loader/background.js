@@ -2,7 +2,7 @@
 //background script is always running unless extension is disabled
 // define global variabels
 var ddb_url_array = [];
-var ddb_char_array = [];
+var ddb_char_array;
 var client_ip = [];
 // load client_ip from Storage and check if set
 chrome.storage.local.get(['clientIP'], function(result) {
@@ -14,6 +14,16 @@ if (typeof client_ip === 'undefined'){
 else {
     console.log('Client IP in options.html set, nothing to do!');}
 })
+// define function to create json dict and send via fetch()
+function sendCharData() {
+    fetch('http://' + client_ip + '/json', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ddb_char_array})
+    });
+console.log('printing Json format String!')
+console.log(JSON.stringify({ddb_char_array}));
+        };
 // add listener for URL array
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse){
@@ -33,14 +43,18 @@ chrome.runtime.onMessage.addListener(
     if (typeof client_ip !== 'undefinded'){
         console.log('Already loaded client IP');
         console.log('Client IP: ' + client_ip);
-        requestCharData();}
+        requestCharData();
+        console.log('sending char data to client!');
+        sendCharData();}
     else {
 // get client IP from storage
         chrome.storage.local.get(['clientIP'], function(result) {
         client_ip = result.clientIP;
         console.log('Loading client IP!');
         console.log('Client IP: ' + client_ip);
-        requestCharData();})}
+        requestCharData();
+        console.log('sending char data to client!');
+        sendCharData();})}
 // define function to get character urls
     function requestCharData () {        
 // if valid data received, print to console and
