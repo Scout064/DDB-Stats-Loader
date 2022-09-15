@@ -1,0 +1,6 @@
+pip
+python3
+flask
+flask-cors
+##if run on micropython (i.e. PiPico W)
+picoweb
