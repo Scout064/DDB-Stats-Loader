@@ -1,6 +1,6 @@
 # DDB-Stats-Loader/DDB-Campaign-Chardata-Loader
 
-![Python workflow](https://github.com/Scout064/DDB-Stats-Loader/tree/main/.github/workflows/python-app.yml/badge.svg)
+[![Python application](https://github.com/Scout064/DDB-Stats-Loader/actions/workflows/python-app.yml/badge.svg)](https://github.com/Scout064/DDB-Stats-Loader/actions/workflows/python-app.yml)
 
 ## To-do
 
