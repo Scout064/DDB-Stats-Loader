@@ -11,3 +11,4 @@ Werkzeug
 flask-tinydb
 ##if run on micropython (i.e. PiPico W)
 picoweb
+micropython-tinydb
