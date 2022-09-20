@@ -9,6 +9,6 @@
 
 ### CLIENT
 
--> create pythonscript for SoC (i.e. Rpi)
+-> create pythonscript for SoC (i.e. Rpi) #KILLED FOR NOW
 
--> create pythonscript for Microcontroller (i.e. PiPico W)
+-> create pythonscript for Microcontroller (i.e. PiPico W) #PRIMARY FOCUS
