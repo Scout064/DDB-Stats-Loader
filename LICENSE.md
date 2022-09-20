@@ -3,7 +3,7 @@ https://mrmagicpie.xyz/license
 
 Copyright (c) 2022 Scout064
 
-(1) All works licensed under this License are entirely the work of the licensor unless otherwise stated.
+(1) All works licensed under this License are entirely the work of the licensor unless otherwise stated.  
 (2) THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
