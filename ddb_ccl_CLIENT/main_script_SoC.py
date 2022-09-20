@@ -5,7 +5,7 @@ import json
 import flask
 from flask_cors import CORS
 import logging
-import sys  
+import sys
 
 ## define flask/picoweb
 app = flask.Flask(__name__)
