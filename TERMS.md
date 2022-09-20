@@ -1,4 +1,4 @@
-Mrmagicpie License
+Mrmagicpie License  
 https://mrmagicpie.xyz/license
 
 Copyright (c) 2022 Scout064
