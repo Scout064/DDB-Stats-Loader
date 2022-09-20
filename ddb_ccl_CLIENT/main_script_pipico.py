@@ -95,7 +95,3 @@ def config(req, resp):
 
 logging.basicConfig(level=logging.DEBUG)
 app.run(debug=2, port = 80, host = IPaddress)
-
-
-#######################################################
-#######################################################
