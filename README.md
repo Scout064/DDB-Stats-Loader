@@ -4,8 +4,9 @@
 
 -> Add Button to start collection instead of run at load.
 
--> Add send to Networked Client Routine for Char Stats
---> DONE! (fetch() and flask)
+-> Change config script to reload Service Worker on Save.
+
+-> Add send to Networked Client Routine for Char Stats #DONE! (fetch() and flask)
 
 ### CLIENT
 
