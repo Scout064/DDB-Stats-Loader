@@ -13,3 +13,4 @@ flask-tinydb
 picoweb
 micropython-tinydb
 ulogging
+utemplate
