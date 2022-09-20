@@ -27,4 +27,4 @@ There are three Endpoints exposed:
   3) http://HOST_IP "/config" -> used to configure the Player to GPIO mapping  (templates/config.html, error.html)  
 
 As the Project is based on picoweb the html template pages are located at the root fs in the "templates" folder.  
-See picowebs documentation for further information.  
+See the [picoweb documentation](https://github.com/pfalcon/picoweb) for further information.  
