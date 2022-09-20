@@ -15,7 +15,8 @@ It builds the Framework upon which the electronic and IoT infrastructure is buil
 **_(PLEASE SEE THE "LICENSE" FILE IF YOU WANT TO USE THIS PROJECT_)**.
 
 ## API Documentation  
-This can be found here(https://github.com/Scout064/DDB-Stats-Loader/blob/main/Api_Documentation.md)
+This can be found [here]!(https://github.com/Scout064/DDB-Stats-Loader/blob/main/Api_Documentation.md)
+
 
 ## To-do  
 -> Add Button to start collection instead of run at load.  
