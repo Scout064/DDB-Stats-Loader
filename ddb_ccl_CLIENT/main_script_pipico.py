@@ -60,11 +60,11 @@ def json_post_data(req, resp):
         yield from picoweb.start_response(resp, content_type="application/json; charset=utf-8", status="200", headers=headers_json)
         db.insert(request_data)
         ##DEBUG OPTIONS##
-        print("DATA RECEIVED")##
-        print(request_data)##
-        method = req.method##
-        print("Method was:" + method)##
-        print("Writing Data to DB!")##
+        ##print("DATA RECEIVED")##
+        ##print(request_data)##
+        ##method = req.method##
+        ##print("Method was:" + method)##
+        ##print("Writing Data to DB!")##
     else:
         yield from picoweb.start_response(resp, content_type = "text/html")
         yield from app.render_template(resp, 'error.html')
