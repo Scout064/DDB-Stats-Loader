@@ -55,16 +55,16 @@ def json_post_data(req, resp):
         size = int(req.headers[b"Content-Length"])
         read_request = yield from req.reader.readexactly(size)
         request_data = json.loads(read_request)
-        headers_json = {'Content-Type': 'application/json', 'Accept': "application/json"}
+        headers_json = {'Content-Type': 'application/json', 'Accept': "application/json", "Access-Control-Allow-Methods": "POST, GET", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Access-Control-Allow-Methods, Access-Control-Allow-Origin, Origin, Accept, Content-Type"}
         ## next data digestion
         yield from picoweb.start_response(resp, content_type="application/json; charset=utf-8", status="200", headers=headers_json)
+        db.insert(request_data)
         ##DEBUG OPTIONS##
-        ##print("DATA RECEIVED")##
-        ##print(request_data)##
-        ##method = req.method##
-        ##print("Method was:" + method)##
-        ##print("Writing Data to DB!")##
-        ##db.insert(request_data)##
+        print("DATA RECEIVED")##
+        print(request_data)##
+        method = req.method##
+        print("Method was:" + method)##
+        print("Writing Data to DB!")##
     else:
         yield from picoweb.start_response(resp, content_type = "text/html")
         yield from app.render_template(resp, 'error.html')
@@ -95,3 +95,4 @@ def config(req, resp):
 
 logging.basicConfig(level=logging.DEBUG)
 app.run(debug=2, port = 80, host = IPaddress)
+
