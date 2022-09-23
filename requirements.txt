@@ -1,16 +1,5 @@
-pip
-flask
-flask-cors
-click
-itsdangerous
-Jinja2
-MarkupSafe
-PyYAML
-tinydb
-Werkzeug
-flask-tinydb
-##if run on micropython (i.e. PiPico W)
 picoweb
 micropython-tinydb
 ulogging
 utemplate
+uasyncio
