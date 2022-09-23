@@ -1,5 +1,5 @@
 picoweb
-micropython-tinydb
+tinydb
 ulogging
 utemplate
 uasyncio
