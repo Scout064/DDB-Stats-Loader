@@ -4,7 +4,7 @@ This tool aims at enabling a DM to display Character Stats via IoT devices.
 The Project consists of two parts:  
 1) **Chrome extension**   
   1a) gathers Data from DDB and sends said data to an API
-2) **API (microcontroller)**  
+2) **API (microcontroller) - !Not yet functional!**  
   2a) current implemetation on micropython base.    
       Needs Board with Network capabilities.  
       Code is written for piPico but could be adapted to other boards.  
