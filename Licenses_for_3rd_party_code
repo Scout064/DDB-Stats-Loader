@@ -81,3 +81,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ##################################################################################
+
+# json_extract
+
+SOURCE = https://hackersandslackers.com/extract-data-from-complex-json-python/
+
+##################################################################################
+
