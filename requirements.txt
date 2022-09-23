@@ -2,4 +2,4 @@ picoweb
 tinydb
 ulogging
 utemplate
-uasyncio
+pycopy-lib (uasyncio)
