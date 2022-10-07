@@ -33,15 +33,17 @@ else:
     sleep(2)
 
 ## Network Setup 
-ssid = '*********'
-password = '********'
+#ssid = 'IOT'
+#password = 'T79brWDLcZp3LVrw'
+ssid = 'zyxelemea'
+password = 'ZyxelEMEA20!'
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 wlan.connect(ssid, password)
 print("Waiting to connect:")
 while not wlan.isconnected() and wlan.status() >= 0:
     print(".", end="")   
-    sleep(5)
+    sleep(2)
 print("")
 print(wlan.ifconfig())
 ## define IFconfig var with ifconfig array
@@ -49,17 +51,43 @@ IFconfig = wlan.ifconfig()
 ## take first Value of array
 IPaddress = IFconfig[0]
 
-##Set up Database
+## Set up Database
 db = TinyDB('db.json')
 ## check if db empty, if not: clear all data
 if db.all() != []:
     db.truncate()
     
-## delete old version of playerID.json and create empty
-os.remove("playerID.json")
-file = open('playerID.json', 'w')
-file.close()
+## Check if renders exist, then delete renders
+def index_exists():
+    try:
+        os.stat("/templates/index_html.py")
+        return True
+    except OSError:
+        return False
+    
+def config_exists():
+    try:
+        os.stat("/templates/config_html.py")
+        return True
+    except OSError:
+        return False
+    
+def error_exists():
+    try:
+        os.stat("/templates/error_html.py")
+        return True
+    except OSError:
+        return False
 
+if index_exists() != False:
+    os.remove("/templates/index_html.py")
+
+if config_exists() != False:
+    os.remove("/templates/config_html.py")
+
+if error_exists() != False:
+    os.remove("/templates/error_html.py")
+    
 ## Set up Multicore Workflow
 ## Define semaphore lock
 sLock = _thread.allocate_lock()
@@ -115,7 +143,7 @@ while True:
             ##print("Writing Data to DB!")##
         else:
             yield from picoweb.start_response(resp, content_type = "text/html")
-            yield from app.render_template(resp, status="500", 'error.html')
+            yield from app.render_template(resp, status="500")
             ##DEBUG OPTIONS##
             ##print("ERROR! NOT A VALID REQUEST!")##
             ##method = req.method##
@@ -129,29 +157,39 @@ while True:
             yield from app.render_template(resp, 'index.html')
         else:
             yield from picoweb.start_response(resp, content_type = "text/html")
-            yield from app.render_template(resp, status="500", 'error.html') 
+            yield from app.render_template(resp, status="500") 
     
     ## Configuration Endpoint
     @app.route("/config")
     def config(req, resp):
         if req.method == 'GET':
+            ## Init Player VAR
+            locals()["Player_ID0"] = "No Player"
+            locals()["Player_ID1"] = "No Player"
+            locals()["Player_ID2"] = "No Player"
+            locals()["Player_ID3"] = "No Player"
+            locals()["Player_ID4"] = "No Player"
+            locals()["Player_ID5"] = "No Player"
+            locals()["Player_ID6"] = "No Player"
+            locals()["Player_ID7"] = "No Player"
+            ## Continue Grabbing Data
             load_db = open('db.json', 'r')
             get_data = json.load(load_db)
             player_names = json_extract(get_data, 'Name')
-            playerID = {'Name':player_names}
-            #playerConf = {"Player1":player_names, "Player2":player_names, "Player3":player_names, "Player4":player_names, "Player5":player_names, "Player6":player_names, "Player7":player_names, "Player8":player_names}
-            for i in range(0, 8):
-                locals()[f"Player{i}"] = name
-                playerConf = {"Player_ID{i}":locals()[f"Player{i}"]}
-            for i in player_names:
-                file = open('playerID.json', "a")
-                file.write(json.dumps('{'Name':i},'))
-                file.close()
+            ## Get amount of Players and create vars with Player Name
+            i = 0
+            count = len(player_names)-1 + 1
+            while i < count:
+                for name in player_names:
+                    locals()[f"Player_ID{i}"] = name
+                    i +=1
+            ## Define vars for the HTML render
+            playerConf = {"Player1": locals()["Player_ID0"], "Player2": locals()["Player_ID1"], "Player3": locals()["Player_ID2"], "Player4": locals()["Player_ID3"], "Player5": locals()["Player_ID4"], "Player6": locals()["Player_ID5"], "Player7": locals()["Player_ID6"], "Player8": locals()["Player_ID7"]}
             yield from picoweb.start_response(resp, content_type = "text/html")
             yield from app.render_template(resp, 'config.html', (playerConf,))
         else:
             yield from picoweb.start_response(resp, content_type = "text/html")
-            yield from app.render_template(resp, status="500", 'error.html')
+            yield from app.render_template(resp, status="500")
 
     logging.basicConfig(level=logging.DEBUG)
     app.run(debug=2, port = 80, host = IPaddress)
