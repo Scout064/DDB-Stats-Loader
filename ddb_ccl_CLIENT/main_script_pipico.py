@@ -33,10 +33,8 @@ else:
     sleep(2)
 
 ## Network Setup 
-#ssid = 'IOT'
-#password = 'T79brWDLcZp3LVrw'
-ssid = 'zyxelemea'
-password = 'ZyxelEMEA20!'
+ssid = '****************'
+password = '***************'
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 wlan.connect(ssid, password)
