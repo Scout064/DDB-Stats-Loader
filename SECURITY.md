@@ -5,7 +5,7 @@
 | Version | Supported          |
 | ------- | ------------------ |
 | current 0.9.9beta.1     | :x: |
-| Update available   | :y:                |
+| Update available   | ✔️                |
 
 
 ## Reporting a Vulnerability
