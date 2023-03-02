@@ -24,4 +24,4 @@ This can be found [here](https://github.com/Scout064/DDB-Stats-Loader/blob/main/
 
 ### CLIENT  
 -> create pythonscript for SoC (i.e. Rpi) #KILLED FOR NOW  
--> create pythonscript for Microcontroller (i.e. PiPico W) #PRIMARY FOCU
+-> create pythonscript for Microcontroller (i.e. PiPico W) #PRIMARY FOCUS
