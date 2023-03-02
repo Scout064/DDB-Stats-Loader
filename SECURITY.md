@@ -4,8 +4,8 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| current 0.9.9beta.2     | :x: |
-| Update available   | :x:                |
+| current 0.9.9beta.1     | :x: |
+| Update available   | :v:                |
 
 
 ## Reporting a Vulnerability
