@@ -19,7 +19,7 @@ This can be found [here](https://github.com/Scout064/DDB-Stats-Loader/blob/main/
 
 
 ## To-do  
--> Add Button to start collection instead of run at load.  
+-> Add Button to start collection instead of run at load.  (Done - 02.03.2023)
 -> Change config script to reload Service Worker on Save. (Done - 02.03.2023)
 
 ### CLIENT  
