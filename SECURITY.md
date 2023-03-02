@@ -4,7 +4,7 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| current 0.9.9beta.1     | :x: |
+| current 0.9.9beta.2     | :x: |
 | Update available   | :x:                |
 
 
